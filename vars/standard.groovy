@@ -13,7 +13,6 @@ def call() {
     stages {
       stage('Build') {
         steps {
-          echo "Running build ${env.BUILD_ID} on ${env.JENKINS_URL}"
           sh 'go build'
         }
       }
@@ -21,7 +20,6 @@ def call() {
         steps {
           echo "Running Tests"
           echo "The environment variable for this stage is: ${ENV_VAR_PSRNL}"
-          echo "First Name is: ${firstName}"
           sh 'go test -cover'
         }
       }
